@@ -103,3 +103,10 @@ div .form-control{
   border-radius:25px; 
   border: 2px dotted gold;
 }
+div .text-white{
+  font-size: 30px;
+  font-family: fantasy;
+  text-shadow: 2px 5px #c9b825;
+  letter-spacing: 8px;
+  
+}
