@@ -1,9 +1,10 @@
 var buttonLoad = document.querySelector('.btn');
 //console.log(buttonLoad);
-
+var searchInput = document.getElementById('searchB');
+//console.log(searchInput);
 
 //fja za dugme gde ucitamo jos vise filmova
-//ista kao za prvobitno ucitavanje
+//ista kao za prvobitno ucitavanje samo se ucitava lista do kraja
 function loadMore(){
     if(buttonLoad){
         $.get('http://api.tvmaze.com/shows', function(data){

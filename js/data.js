@@ -1,7 +1,9 @@
 var divPicture = document.querySelector('.main');
 //console.log(divPicture);
 let input = document.querySelector(".form-control");
+
 let div = document.querySelector(".row");
+//console.log(div);
 
 class Show{
     constructor(id, title, cover){
@@ -10,10 +12,6 @@ class Show{
         this.cover = cover;
     }
 }
-
-function showCreate(){
-    return new Show(id,title, cover)
-};
 
 
 // function fetchShows(){
@@ -28,7 +26,7 @@ function showCreate(){
 // }
 
 $.get('http://api.tvmaze.com/shows', function(data){
-    console.log(data);
+   // console.log(data);
    // console.log(data[0]);
   for(var i=0; i<20; i++){
     //console.log(data[i].image.medium);
@@ -60,3 +58,34 @@ div.appendChild(divTitle);
   }
 
 })
+
+//kreira se dropdown
+
+let searchBox = document.querySelector('.form-inline');
+//console.log(searchBox);
+//kreiramo element gde ce upisivati rezultati pretrage
+let searchResult = document.createElement('ul');
+searchResult.className = 'searcher';
+
+function search(){
+    $.get(`http://api.tvmaze.com/search/shows?q=${input.value}`, function(data){
+    console.log(data);
+    searchBox.appendChild(searchResult);
+    searchResult.textContent = ''
+    for(var i= 0; i<data.length; i++){
+        let liInSearch = document.createElement('li');
+        let linkForLi = document.createElement('a');
+        linkForLi.setAttribute('href', `profile.html?id=${data[i].id}` );
+        linkForLi.setAttribute("target", "_blank");
+        liInSearch.textContent = data[i].show.name;
+        linkForLi.appendChild(liInSearch);
+        searchResult.appendChild(linkForLi);
+    }
+  
+});
+
+}
+search();
+// dogadjaj koji ce se desiti prilkom svakog klika na tastaturi i unosa u input
+input.addEventListener('keyup', search)
+

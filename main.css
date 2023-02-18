@@ -91,7 +91,7 @@ body {
 .row {
   color: gold;
 }
-/* **********************************************************************8 */
+/* ********************************************************************** */
 
 /* BUTTON STYLE */
 .container .btn {
@@ -103,6 +103,9 @@ div .form-control{
   border-radius:25px; 
   border: 2px dotted gold;
 }
+
+/* ***************************************************** */
+/* Styling LOGO and Footer text */
 div .text-white{
   font-size: 30px;
   font-family: fantasy;
