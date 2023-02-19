@@ -2,7 +2,7 @@ var divPicture = document.querySelector('.main');
 //console.log(divPicture);
 let input = document.querySelector(".form-control");
 
-let div = document.querySelector(".row");
+let div = document.querySelector(".text-center");
 //console.log(div);
 
 class Show{
@@ -12,18 +12,6 @@ class Show{
         this.cover = cover;
     }
 }
-
-
-// function fetchShows(){
-//     $.ajax({
-//         methode: 'GET',
-//         url: 'http://api.tvmaze.com/shows'
-//     }).done(function(data){
-//         console.log(data);
-//     }).fail( function (){
-    //var error = 'network problems, please try later...'
-//})
-// }
 
 $.get('http://api.tvmaze.com/shows', function(data){
    // console.log(data);
@@ -39,12 +27,12 @@ let link = document.createElement("a");
 let imgLink = document.createElement("a");
 
 
-imgLink.setAttribute("href", `profile.html?id=${data[i].id}`)
+imgLink.setAttribute("href", "#")
 
-link.setAttribute("href", `profile.html?id=${data[i].id}`);
-link.setAttribute("target", "_blank");
+link.setAttribute("href", "#");
 divTitle.className = "col-sm-12 col-md-4 col-lg-3 title";
 img.setAttribute("src", data[i].image.medium);
+img.setAttribute('id', data[i].id )
 img.setAttribute('class','imgborder');
 img.style.width = '250px';
 img.style.marginBottom = '30px';
@@ -79,17 +67,16 @@ function loadMore(){
 let img = document.createElement("img");
 let h3 = document.createElement("h3");
 let divTitle = document.createElement("div");
-let link = document.createElement("a");
+ let link = document.createElement("a");
 let imgLink = document.createElement("a");
 
+imgLink.setAttribute("href", "#")
 
-imgLink.setAttribute("href", `profile.html?id=${data[i].id}`)
-
-link.setAttribute("href", `profile.html?id=${data[i].id}`);
-link.setAttribute("target", "_blank");
+link.setAttribute("href", "#");
 divTitle.className = "col-sm-12 col-md-4 col-lg-3 title";
 img.setAttribute("src", data[i].image.medium);
 img.setAttribute('class','imgborder');
+img.setAttribute('id', data[i].id)
 h3.textContent = data[i].name;
 link.appendChild(h3);
 imgLink.appendChild(img)
@@ -134,4 +121,8 @@ function search(){
 search();
 // dogadjaj koji ce se desiti prilkom svakog klika na tastaturi i unosa u input
 input.addEventListener('keyup', search)
+
+
+
+
 
