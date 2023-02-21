@@ -25,6 +25,7 @@ body {
   width: 100%;
   border: 4px solid gold;
   box-shadow: 10px 3px rgb(207, 195, 168);
+ 
 }
 
 
@@ -107,10 +108,14 @@ div .form-control{
 /* ***************************************************** */
 /* Styling LOGO and Footer text */
 div .text-white{
-  font-size: 30px;
+  font-size: 20px;
   font-family: fantasy;
-  text-shadow: 2px 5px #c9b825;
-  letter-spacing: 8px;
+  text-shadow: 2px 2px #c9b825;
+  letter-spacing: 6px;
+  
+}
+.singlePage-image{
+  width: 300px;
   
 }
 

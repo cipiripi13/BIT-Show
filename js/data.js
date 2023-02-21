@@ -13,7 +13,9 @@ class Show{
     }
 }
 
-$.get('http://api.tvmaze.com/shows', function(data){
+
+
+let firstLoad = function() {$.get('http://api.tvmaze.com/shows', function(data){
    // console.log(data);
    // console.log(data[0]);
   for(var i=0; i<20; i++){
@@ -45,13 +47,13 @@ div.appendChild(divTitle);
     
   }
 
-});
+})};
+firstLoad();
 
 
 var buttonLoad = document.querySelector('.btn');
-//console.log(buttonLoad);
 var searchInput = document.getElementById('searchB');
-//console.log(searchInput);
+
 
 //fja za dugme gde ucitamo jos vise filmova
 //ista kao za prvobitno ucitavanje samo se ucitava lista do kraja
