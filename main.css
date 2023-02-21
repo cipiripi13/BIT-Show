@@ -83,12 +83,7 @@ body {
   color: gold;
 }
 
-#cast,
-#season,
-#crew,
-#aka {
-  color: gold;
-}
+
 .row {
   color: gold;
 }
@@ -112,10 +107,6 @@ div .text-white{
   font-family: fantasy;
   text-shadow: 2px 2px #c9b825;
   letter-spacing: 6px;
-  
-}
-.singlePage-image{
-  width: 300px;
   
 }
 
